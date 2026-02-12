@@ -13,7 +13,7 @@ picam2.start()
 
 WINDOW_NAME = "raspi_实时处理画面"
 cv2.namedWindow(WINDOW_NAME, cv2.WINDOW_NORMAL)  # 允许窗口缩放
-cv2.resizeWindow(WINDOW_NAME, 1280, 1020)
+
 try:
     print("开始实时显示，按 'q' 键退出...")
     while True:
@@ -28,7 +28,7 @@ try:
         
         # 在VNC窗口里实时显示处理后的画面
         cv2.imshow(WINDOW_NAME, processed_frame)
-        
+        cv2.resizeWindow(WINDOW_NAME, 1280, 1020)
   
         if cv2.waitKey(1) & 0xFF == ord('q'):
             break
